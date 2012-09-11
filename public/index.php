@@ -3,7 +3,7 @@ session_start();
 
 $app_id = "131536600275003";
 
-$canvas_page = "http://apps.facebook.com/131536600275003/";
+$canvas_page = "http://apps.facebook.com/social_table/";
 
 $auth_url = "https://www.facebook.com/dialog/oauth?client_id=" . $app_id .
 	"&redirect_uri=" . urlencode($canvas_page) .

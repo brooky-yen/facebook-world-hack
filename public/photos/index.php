@@ -22,7 +22,7 @@ $photo = $result->fetch_assoc();
 </head>
 <body>
 
-    <img src="photo/<?php echo $photo['id']; ?>.jpg" width="300" height="200" alt="" />
+    <img src="../photo/<?php echo $photo['id']; ?>.jpg" width="300" height="200" alt="" />
     <div class="description">
         <?php  echo $photo['description']; ?>
     <div class="want_to_eat">

@@ -23,7 +23,7 @@ $facebookIds = $_REQUEST['facebook_id'];
 <?php 
 foreach ($facebookIds as $facebookId) {
 ?>
-    <input type="text" name="facebook_id[]" value="<?php echo $facebookId;?>"/>
+    <input type="hidden" name="facebook_id[]" value="<?php echo $facebookId;?>"/>
 <?php 
 }
 ?>

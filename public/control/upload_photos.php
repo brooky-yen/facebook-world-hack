@@ -18,8 +18,8 @@ if ($FILES['uploadedfile']['error'] > 0) {
 }
 
 // connect mysqli
-//$mysqli = new mysqli('localhost', 'root', 'eztable323', 'social_table');
-$mysqli = new mysqli('localhost', 'social_table', 'socialtable', 'social_table');
+$mysqli = new mysqli('localhost', 'root', 'eztable323', 'social_table');
+//$mysqli = new mysqli('localhost', 'social_table', 'socialtable', 'social_table');
 if (mysqli_connect_errno()) {
 	printf("Connect failed: %s\n", mysqli_connect_error());
 	exit;

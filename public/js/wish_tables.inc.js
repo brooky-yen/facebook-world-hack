@@ -1,11 +1,17 @@
 $wishTables = {};
 
 $wishTables.getWishTablesByFacebookId = function() {
+    // get facebook ids from request
+    var facebookIds = $('input[name="facebook_id[]"]');
+    var facebook_id = [];
+    facebookIds.each(function(key) {
+        facebook_id.push($(this).val());
+    });
     
     // set api info
     var url = "http://api.eztable.com/v2/user/get_want_to_eat_restaurants_by_facebook_id/";
     var params = {
-        facebook_id: ['1569883047', '100000455848753']
+        facebook_id: facebook_id
     };
     
     // call api to get data
@@ -60,8 +66,4 @@ $wishTables.getWishTablesByFacebookId = function() {
 
 $(document).ready(function() {
     $wishTables.getWishTablesByFacebookId();
-    var facebookIds = $('input[name="facebook_id[]"]');
-    facebookIds.each(function(key) {
-        alert(this.val());
-    });
 });

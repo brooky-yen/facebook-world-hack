@@ -5,8 +5,23 @@ $(document).ready(function() {
         cookie: true,
         oauth: true,
     });
+    $("#jfmfs-container").jfmfs();
+    
+    $('#fb-login').click(function() {
+        postToFeed();
+    });
     
 });
+
+function loginFB() {
+    FB.login(function(response) {
+        if (response.session) {
+            init();
+        } else {
+            alert('Login Failed!');
+        }
+    });
+}
 
 function postToFeed() {
     var obj = {

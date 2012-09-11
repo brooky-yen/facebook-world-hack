@@ -21,7 +21,11 @@ $(document).ready(function() {
     $("#show-friends").live("click", function() {
         var friendSelector = $("#jfmfs-container").data('jfmfs');
         var friendFbIds = friendSelector.getSelectedIds();
-        alert(friendFbIds);
+        var url = 'wish_tables.php?';
+        $.each(friendFbIds, function(i, v) {
+            url += 'facebook_id[]=' + v;
+        });
+        window.location.href = url;
         $("#selected-friends").html(friendSelector.getSelectedIds().join(', ')); 
     });                  
     /*

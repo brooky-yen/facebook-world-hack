@@ -61,8 +61,7 @@ $wishTables.getWishTablesByFacebookId = function() {
 $(document).ready(function() {
     $wishTables.getWishTablesByFacebookId();
     var facebookIds = $('input[name="facebook_id[]"]');
-    alert(facebookIds.eq(0).val());
-    $.each(facebookIds, function(a, b) {
-        alert(b.val());
+    facebookIds.each(function(key) {
+        alert(this.val());
     });
 });

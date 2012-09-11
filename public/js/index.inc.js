@@ -7,7 +7,8 @@ $(document).ready(function() {
     });
     FB.getLoginStatus(function(response) {
         if (response.session) {
-          init();
+          //init();
+            $("#jfmfs-container").jfmfs();
         } else {
           // no user session available, someone you dont know
         }

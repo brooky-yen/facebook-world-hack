@@ -1,3 +1,6 @@
 [submodule "lib/Slim"]
 	path = lib/Slim
 	url = https://github.com/codeguy/Slim.git
+[submodule "lib/notorm"]
+	path = lib/notorm
+	url = https://github.com/vrana/notorm.git

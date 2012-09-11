@@ -18,6 +18,7 @@ if ($FILES['uploadedfile']['error'] > 0) {
 }
 
 // connect mysqli
+//$mysqli = new mysqli('localhost', 'root', 'eztable323', 'social_table');
 $mysqli = new mysqli('localhost', 'social_table', 'socialtable', 'social_table');
 if (mysqli_connect_errno()) {
 	printf("Connect failed: %s\n", mysqli_connect_error());
@@ -64,7 +65,7 @@ $updateQuery = 'UPDATE  `social_table`.`photos` SET  `upload_status` =  "' . $st
 $result = $mysqli->query($updateQuery);
 
 // free
-$result->free();
 $mysqli->close();
 
+echo json_encode(array('status' => $status, 'photo_id' => $insertId));
 exit;

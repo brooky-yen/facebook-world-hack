@@ -65,7 +65,6 @@ $updateQuery = 'UPDATE  `social_table`.`photos` SET  `upload_status` =  "' . $st
 $result = $mysqli->query($updateQuery);
 
 // free
-mysqli_free_result($result);
 $mysqli->close();
 
 echo json_encode(array('status' => $status));

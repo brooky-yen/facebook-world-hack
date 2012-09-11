@@ -1,27 +1,27 @@
 $(document).ready(function() {
-    
     FB.init({
         appId: "131536600275003", 
         status: true, 
         cookie: true,
         oauth: true,
     });
-    
     FB.login(function(response) {
         if (response.authResponse) {
             $("#jfmfs-container").jfmfs();
-          console.log('Welcome!  Fetching your information.... ');
-          FB.api('/me', function(response) {
-            console.log('Good to see you, ' + response.name + '.');
-          });
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Good to see you, ' + response.name + '.');
+            });
         } else {
-          console.log('User cancelled login or did not fully authorize.');
+            console.log('User cancelled login or did not fully authorize.');
         }
-      });
+    });
     
     
     $("#show-friends").live("click", function() {
-        var friendSelector = $("#jfmfs-container").data('jfmfs');             
+        var friendSelector = $("#jfmfs-container").data('jfmfs');
+        var friendFbIds = friendSelector.getSelectedIds();
+        alert(friendFbIds);
         $("#selected-friends").html(friendSelector.getSelectedIds().join(', ')); 
     });                  
     /*

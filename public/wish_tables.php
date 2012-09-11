@@ -14,7 +14,7 @@ $facebookIds = $_REQUEST['facebook_id'];
         <img src="#" alt="Kai Kao" />
         <p>Kai Kao 想吃的餐廳</p>
         <ul style="display: none;">
-            <li>Kai Kao餐廳</li>
+            <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
             <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
         </ul>
     </div>

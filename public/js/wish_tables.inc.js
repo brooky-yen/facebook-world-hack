@@ -45,8 +45,11 @@ $wishTables.getWishTablesByFacebookId = function() {
                 var tables = member.restaurants;
                 $.each(tables, function(i, table) {
                     var ul = template.find('ul:first').clone();
-                    // table name
-                    ul.find('li:first').text(table.name);
+                    
+                    
+                    // table name and link
+                    var rest_link = 'http://www.eztable.com.tw/rest_info.php?id=' + table.id;
+                    ul.find('li:first').find('a').attr('href', rest_link).text(table.name);
                     
                     // table img
                     var table_img = 'http://www.eztable.com.tw' + table.thumb1;

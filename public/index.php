@@ -40,7 +40,10 @@ if (empty($data["user_id"])) {
 <h2>just pick some friends</h2>
 <p id="fb-login">login</p>
 
+<p id="show-friends">show_friends</p>
+<div id="selected-friends"></div>
 <div id="jfmfs-container"></div>
+
    
    
 <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>

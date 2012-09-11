@@ -19,6 +19,11 @@ $(document).ready(function() {
         }
       });
     
+    
+    $("#show-friends").live("click", function() {
+        var friendSelector = $("#jfmfs-container").data('jfmfs');             
+        $("#selected-friends").html(friendSelector.getSelectedIds().join(', ')); 
+    });                  
     /*
     FB.getLoginStatus(function(response) {
         if (response.session) {

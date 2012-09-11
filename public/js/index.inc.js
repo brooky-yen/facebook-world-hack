@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var my_id;
     FB.init({
         appId: "131536600275003", 
         status: true, 
@@ -10,7 +11,7 @@ $(document).ready(function() {
             $("#jfmfs-container").jfmfs();
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
-                alert(response.id);
+                my_id = response.id;
                 console.log('Good to see you, ' + response.name + '.');
             });
         } else {
@@ -23,7 +24,9 @@ $(document).ready(function() {
         var friendSelector = $("#jfmfs-container").data('jfmfs');
         var friendFbIds = friendSelector.getSelectedIds();
         var url = 'wish_tables.php?';
-        var param = 'facebook_id[]=1569883047';
+        //var param = 'facebook_id[]=1569883047';
+        var param = 'facebook_id[]=' + my_id;
+        
         
         $.each(friendFbIds, function(i, v) {
             param += '&facebook_id[]=' + v;

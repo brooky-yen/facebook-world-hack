@@ -37,14 +37,12 @@ if (empty($data["user_id"])) {
 </head>
 <body>
 <div id="fb-root"></div> 
-<h2>just pick some friends</h2>
-<p id="fb-login">login</p>
+<h2>just pick friends to see what tables you guys both like!</h2>
 
-<p id="show-friends">show_friends</p>
+<p id="show-friends">go to sww</p>
 <div id="selected-friends"></div>
 <div id="jfmfs-container"></div>
 
-   
    
 <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="js/lib/fb-friend-selector/jquery.facebook.multifriend.select.min.js"></script>

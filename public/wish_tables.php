@@ -1,4 +1,5 @@
 <?php
+$facebookIds = $_REQUEST['facebook_id'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,6 +20,13 @@
     </div>
 </div>
 
+<?php 
+foreach ($facebookIds as $facebookId) {
+?>
+    <input type="text" name="facebook_id[]" value="<?php echo $facebookId;?>"/>
+<?php 
+}
+?>
 
 <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="js/wish_tables.inc.js"></script>

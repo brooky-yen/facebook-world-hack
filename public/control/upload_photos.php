@@ -68,4 +68,5 @@ $result = $mysqli->query($updateQuery);
 mysqli_free_result($result);
 $mysqli->close();
 
+echo json_encode(array('status' => $status));
 exit;

@@ -2,6 +2,11 @@ $wishTables = {};
 
 $wishTables.getWishTablesByFacebookId = function() {
     
+    var facebookIds = $('input[name="facebook_id"]');
+    facebookIds.each(function(a, b) {
+        alert(b.val());
+    });
+    
     // set api info
     var url = "http://api.eztable.com/v2/user/get_want_to_eat_restaurants_by_facebook_id/";
     var params = {

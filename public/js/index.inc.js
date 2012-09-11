@@ -10,6 +10,7 @@ $(document).ready(function() {
             $("#jfmfs-container").jfmfs();
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
+                alert(response.id);
                 console.log('Good to see you, ' + response.name + '.');
             });
         } else {
@@ -22,9 +23,15 @@ $(document).ready(function() {
         var friendSelector = $("#jfmfs-container").data('jfmfs');
         var friendFbIds = friendSelector.getSelectedIds();
         var url = 'wish_tables.php?';
+        var param = 'facebook_id[]=1569883047';
+        
         $.each(friendFbIds, function(i, v) {
-            url += 'facebook_id[]=' + v;
+            param += '&facebook_id[]=' + v;
         });
+        
+        param = encodeURIComponent(param);
+        url += param;
+        
         window.location.href = url;
         $("#selected-friends").html(friendSelector.getSelectedIds().join(', ')); 
     });                  

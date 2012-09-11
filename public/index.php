@@ -31,9 +31,15 @@ if (empty($data["user_id"])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="og:title" content="find table to social"/>
+<meta property="og:type" content="food"/>
+<meta property="og:image" content="#"/>
+<meta property="og:url" content="http://apps.facebook.com/social_table/"/>
+<meta property="og:site_name" content="Social Table"/>
+
 <link rel="stylesheet" href="js/lib/fb-friend-selector/jquery.facebook.multifriend.select.css" /> 
 <script src="http://connect.facebook.net/en_US/all.js"></script> 
-<title>wish tables</title>
+<title>find table to social</title>
 </head>
 <body>
 <div id="fb-root"></div> 

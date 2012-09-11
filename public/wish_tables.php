@@ -1,10 +1,16 @@
 <?php
 $facebookIds = $_REQUEST['facebook_id'];
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="og:title" content="wish tables"/>
+<meta property="og:type" content="food"/>
+<meta property="og:image" content="#"/>
+<meta property="og:url" content="http://apps.facebook.com/social_table/"/>
+<meta property="og:site_name" content="Social Table"/>
+
 <title>wish tables</title>
 </head>
 <body>

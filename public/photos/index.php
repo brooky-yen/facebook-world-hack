@@ -19,6 +19,12 @@ $photo = $result->fetch_assoc();
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Photo <?php echo $photo[$i]; ?></title>
     <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+  <meta property="fb:app_id" content="131536600275003" /> 
+  <meta property="og:type"   content="social_table:dish" /> 
+  <meta property="og:url"    content="http://socialtable.eztable.com/public/photos/index.php?id=<?php echo $photo[$i]; ?>" /> 
+  <meta property="og:title"  content="Dish Photo <?php echo $photo[$i]; ?>" /> 
+  <meta property="og:image"  content="http://socialtable.eztable.com/public/photo/<?php echo $photo['id']; ?>.jpg" /> 
+
 </head>
 <body>
 

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<project name="kernel" basedir="." default="test">
+    <target name="update" >
+        <exec command="git pull" dir="." />
+        <phingcall target="prepare-tmp" />
+    </target>
+</project>

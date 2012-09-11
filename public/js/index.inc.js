@@ -29,7 +29,6 @@ $(document).ready(function() {
             param += '&facebook_id[]=' + v;
         });
         
-        param = encodeURIComponent(param);
         url += param;
         
         window.location.href = url;

@@ -1,42 +1,42 @@
 $(document).ready(function() {
+    var my_id;
+    
     FB.init({
         appId: "131536600275003", 
         status: true, 
         cookie: true,
         oauth: true,
     });
-    $("#jfmfs-container").jfmfs();
     
-    $('#fb-login').click(function() {
-        postToFeed();
-    });
-    
-});
-
-function loginFB() {
     FB.login(function(response) {
-        if (response.session) {
-            init();
+        if (response.authResponse) {
+            $("#jfmfs-container").jfmfs();
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                my_id = response.id;
+                console.log('Good to see you, ' + response.name + '.');
+            });
         } else {
-            alert('Login Failed!');
+            console.log('User cancelled login or did not fully authorize.');
         }
     });
-}
+    
+    
+    $("#show-friends").live("click", function() {
+        var friendSelector = $("#jfmfs-container").data('jfmfs');
+        var friendFbIds = friendSelector.getSelectedIds();
+        var url = 'wish_tables.php?';
+        //var param = 'facebook_id[]=1569883047';
+        var param = 'facebook_id[]=' + my_id;
+        
+        
+        $.each(friendFbIds, function(i, v) {
+            param += '&facebook_id[]=' + v;
+        });
+        
+        url += param;
+        
+        window.location.href = url;
+    });                  
+});
 
-function postToFeed() {
-    var obj = {
-        method: 'feed',
-        //to: 217352441629605,
-        link: 'http://www.facebook.com/HandsomeKAI',
-        picture: 'http://qph.cf.quoracdn.net/main-thumb-4211440-200-Di1eriWgB0URQhKK1HSggeO2pJvdmbJd.jpeg',
-        name: 'Facebook Dialogs',
-        caption: 'Let\'s post a feed!!!',
-        description: 'Using Dialogs to interact with users.'
-    };
-
-    function callback(response) {
-        document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-    }
-
-    FB.ui(obj, callback);
-}

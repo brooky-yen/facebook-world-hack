@@ -39,7 +39,7 @@ if (empty($data["user_id"])) {
 <div id="fb-root"></div> 
 <h2>just pick friends to see what tables you guys both like!</h2>
 
-<p id="show-friends">go to sww</p>
+<input type="button" value="let's check out!" id="show-friends"></input>
 <div id="selected-friends"></div>
 <div id="jfmfs-container"></div>
 

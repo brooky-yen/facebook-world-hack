@@ -5,6 +5,7 @@ $(document).ready(function() {
         cookie: true,
         oauth: true,
     });
+    $("#jfmfs-container").jfmfs();
     
     $('#fb-login').click(function() {
         postToFeed();

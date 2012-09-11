@@ -1,56 +1,56 @@
 <?php
 session_start();
 
-$mysqli = new mysqli('http://socialtable.eztable.com/', 'social_table', 'social_table', 'socialtable');
-    if (mysqli_connect_errno()) {
-    	printf("Connect failed: %s\n", mysqli_connect_error());
-    	exit;
-	}
+$mysqli = new mysqli('http://socialtable.eztable.com/', 'socialtable', 'social_table', 'photos');
+if (mysqli_connect_errno()) {
+	printf("Connect failed: %s\n", mysqli_connect_error());
+	exit;
+}
 
-	var_dump($mysqli);exit;
-	// check is this account already exist
-    $query = 'SELECT * FROM `member` WHERE `account` = "' . $account . '"';
-    $result = $mysqli->query($query);
-	$resultArray = mysqli_fetch_assoc($result);
+var_dump($mysqli);exit;
+// check is this account already exist
+$query = 'SELECT * FROM `member` WHERE `account` = "' . $account . '"';
+$result = $mysqli->query($query);
+$resultArray = mysqli_fetch_assoc($result);
 
-	// if already exist, alert and redirect to last page
-	if ($resultArray) {
-		$result->free();
-		$mysqli->close();
-		echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />";
-		echo "<script>alert('This account already exist! Change other accounts'); history.back();</script>";
-		exit;
-	}
-
-	// get now datetime
-	$cdate = new DateTime();
-	$cdate = $cdate->format('Y-m-d H:i:s');
-
-	// insert member data
-	$query = 'INSERT INTO `imigisco_kai`.`member` (';
-	$query .= '`account`, `password`, `name`, `tel`, `email`, `cdate`)';
-	$query .= 'VALUES ("' . $account . '","' . $_REQUEST['password'] . '","' . $_REQUEST['name'] . '","' . $_REQUEST['tel'] . '","' . $_REQUEST['email'] . '","' . $cdate . '");';
-
-	$result = $mysqli->query($query);
-	$insertId = mysqli_insert_id($mysqli);
-
-	// get member data
-	$query = 'SELECT * FROM `member` WHERE `id` = ' . $insertId;
-	$result = $mysqli->query($query);
-	$member = mysqli_fetch_assoc($result);
-
-	// check exception
-	if ($insertId < 1 || !$member) {
-		$result->free();
-		$mysqli->close();
-		echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />";
-		echo "<script>alert('Insert Faield!'); history.back();</script>";
-		exit;
-	}
-
-	// free connection
+// if already exist, alert and redirect to last page
+if ($resultArray) {
 	$result->free();
 	$mysqli->close();
+	echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />";
+	echo "<script>alert('This account already exist! Change other accounts'); history.back();</script>";
+	exit;
+}
+
+// get now datetime
+$cdate = new DateTime();
+$cdate = $cdate->format('Y-m-d H:i:s');
+
+// insert member data
+$query = 'INSERT INTO `imigisco_kai`.`member` (';
+$query .= '`account`, `password`, `name`, `tel`, `email`, `cdate`)';
+$query .= 'VALUES ("' . $account . '","' . $_REQUEST['password'] . '","' . $_REQUEST['name'] . '","' . $_REQUEST['tel'] . '","' . $_REQUEST['email'] . '","' . $cdate . '");';
+
+$result = $mysqli->query($query);
+$insertId = mysqli_insert_id($mysqli);
+
+// get member data
+$query = 'SELECT * FROM `member` WHERE `id` = ' . $insertId;
+$result = $mysqli->query($query);
+$member = mysqli_fetch_assoc($result);
+
+// check exception
+if ($insertId < 1 || !$member) {
+	$result->free();
+	$mysqli->close();
+	echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />";
+	echo "<script>alert('Insert Faield!'); history.back();</script>";
+	exit;
+}
+
+// free connection
+$result->free();
+$mysqli->close();
 
 
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+/*
 $app_id = "131536600275003";
 
 $canvas_page = "http://apps.facebook.com/social_table/";
@@ -22,54 +23,28 @@ if (empty($data["user_id"])) {
     echo ("Welcome User: " . $data["user_id"]);
     $message = "Apps on Facebook.com are cool!";
 
-    /*
-    $feed_url = "https://www.facebook.com/dialog/feed?app_id=" 
-        . $app_id . "&redirect_uri=" . urlencode($canvas_page)
-        . "&message=" . $message;
-    echo("<script> top.location.href='" . $feed_url . "'</script>");
-                */
-} 
+}
+*/ 
 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="stylesheet" href="js/lib/fb-friend-selector/jquery.facebook.multifriend.select.css" /> 
+<script src="http://connect.facebook.net/en_US/all.js"></script> 
 <title>wish tables</title>
 </head>
 <body>
+<div id="fb-root"></div> 
+<h2>just pick some friends</h2>
+<p id="fb-login">login</p>
 
-<div id="user_wish_tables">
-    <div id="wish_table_template" style="display: none;">
-        <img src="#" alt="Kai Kao" />
-        <p>Kai Kao 想吃的餐廳</p>
-        <ul style="display: none;">
-            <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
-            <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
-        </ul>
-    </div>
-</div>
-
-
-<div id="union_wish_tables">
-    <p>你們想吃的全部餐廳</p>
-    <ul style="display: none;">
-        <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
-        <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
-    </ul>
-</div>
-
-
-<div id="intersection_wish_tables">
-    <p>你們都想吃的餐廳</p>
-    <ul style="display: none;">
-        <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
-        <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
-    </ul>
-</div>
-
+<div id="jfmfs-container"></div>
+   
+   
 <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="js/lib/fb-friend-selector/jquery.facebook.multifriend.select.min.js"></script>
 <script type="text/javascript" src="js/index.inc.js"></script>
 </body> 
 </html>

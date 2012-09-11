@@ -6,7 +6,21 @@ $(document).ready(function() {
         oauth: true,
     });
     
+    $('#fb-login').click(function() {
+        loginFB();
+    });
+    
 });
+
+function loginFB() {
+    FB.login(function(response) {
+        if (response.session) {
+            init();
+        } else {
+            alert('Login Failed!');
+        }
+    });
+}
 
 function postToFeed() {
     var obj = {

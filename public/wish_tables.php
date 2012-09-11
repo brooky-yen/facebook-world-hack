@@ -20,6 +20,24 @@ $facebookIds = $_REQUEST['facebook_id'];
     </div>
 </div>
 
+
+<div id="union_wish_tables">
+    <p>你們想吃的全部餐廳</p>
+    <ul style="display: none;">
+        <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
+        <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
+    </ul>
+</div>
+
+
+<div id="intersection_wish_tables">
+    <p>你們都想吃的餐廳</p>
+    <ul style="display: none;">
+        <li><a href="#" target="_blank">Kai Kao餐廳</a></li>
+        <li><img src="#" width="130px" height="85px" alt="Kai Kao restaurant" /></li>
+    </ul>
+</div>
+
 <?php 
 foreach ($facebookIds as $facebookId) {
 ?>

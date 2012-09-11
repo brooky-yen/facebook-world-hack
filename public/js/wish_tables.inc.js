@@ -28,6 +28,8 @@ $wishTables.getWishTablesByFacebookId = function() {
             
             var data = returnValue.data;
             var members = data.members;
+            
+            // process each member's wish tables
             $.each(members, function(index, member) {
                 var template = $('#wish_table_template').clone();
                 
@@ -62,6 +64,42 @@ $wishTables.getWishTablesByFacebookId = function() {
                 
                 template.show();
                 $('#user_wish_tables').append(template);
+            });
+            
+            // union tables
+            var union_tables = data.union_restaurants;
+            $.each(union_tables, function(k, union_table) {
+                var ul = $('#union_wish_tables').find('ul:first').clone();
+                
+                // table name
+                var rest_link = 'http://www.eztable.com.tw/rest_info.php?id=' + union_table.id;
+                ul.find('li:first').find('a').attr('href', rest_link).text(union_table.name);
+                
+                // table img
+                var table_img = 'http://www.eztable.com.tw' + union_table.thumb1;
+                ul.find('li:last img').attr('src', table_img).attr('alt', union_table.name);
+                
+                // append
+                ul.show();
+                $('#union_wish_tables').append(ul);
+            });
+            
+            // intersection tables
+            var intersection_tables = data.intersection_restaurants;
+            $.each(intersection_tables, function(key, intersection_table) {
+                var ul = $('#intersection_wish_tables').find('ul:first').clone();
+                
+                // table name
+                var rest_link = 'http://www.eztable.com.tw/rest_info.php?id=' + intersection_table.id;
+                ul.find('li:first').find('a').attr('href', rest_link).text(intersection_table.name);
+                
+                // table img
+                var table_img = 'http://www.eztable.com.tw' + intersection_table.thumb1;
+                ul.find('li:last img').attr('src', table_img).attr('alt', intersection_table.name);
+                
+                // append
+                ul.show();
+                $('#intersection_wish_tables').append(ul);
             });
         }
     });

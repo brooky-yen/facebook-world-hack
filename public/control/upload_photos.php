@@ -67,5 +67,5 @@ $result = $mysqli->query($updateQuery);
 // free
 $mysqli->close();
 
-echo json_encode(array('status' => $status));
+echo json_encode(array('status' => $status, 'photo_id' => $insertId));
 exit;

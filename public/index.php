@@ -29,14 +29,13 @@ if (empty($data["user_id"])) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# social_table: http://ogp.me/ns/fb/social_table#">
-  <meta property="fb:app_id" content="131536600275003" /> 
-  <meta property="og:type"   content="social_table:voucher" /> 
-  <meta property="og:url"    content="http://socialtable.eztable.com/public/" /> 
-  <meta property="og:title"  content="Sample Voucher" /> 
-  <meta property="og:image"  content="http://socialtable.eztable.com/public/photo/10.jpg" /> 
-  <meta property="og:description" content="The Turducken of Cookies" /> 
-  <meta property="social_table:voucher" content="http://socialtable.eztable.com/public/post_action.html"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="og:title" content="find table to social"/>
+<meta property="og:type" content="food"/>
+<meta property="og:image" content="#"/>
+<meta property="og:url" content="http://apps.facebook.com/social_table/"/>
+<meta property="og:site_name" content="Social Table"/>
 
 <link rel="stylesheet" href="js/lib/fb-friend-selector/jquery.facebook.multifriend.select.css" /> 
 <script src="http://connect.facebook.net/en_US/all.js"></script> 

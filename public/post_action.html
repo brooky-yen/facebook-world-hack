@@ -16,12 +16,12 @@
       FB.api(
         '/me/social_table:voucher',
         'post',
-        { voucher: 'http://socialtable.eztable.com/public/' },
+        { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
         function(response) {
            if (!response || response.error) {
               alert('Error occured');
            } else {
-              alert('Cook was successful! Action ID: ' + response.id);
+              alert('Get Voucher was successful! Action ID: ' + response.id);
            }
         });
   }

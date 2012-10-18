@@ -3,7 +3,7 @@
                
                    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# social_table: http://ogp.me/ns/fb/social_table#">
   <meta property="fb:app_id" content="131536600275003" /> 
-  <meta property="og:type"   content="s" /> 
+  <meta property="og:type"   content="social_table:voucher" /> 
   <meta property="og:url"    content="http://socialtable.eztable.com/public/" /> 
   <meta property="og:title"  content="Sample Voucher" /> 
   <meta property="og:image"  content="http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg" /> 
@@ -13,13 +13,18 @@
   <script type="text/javascript">
   function postCook()
   {
+      
+      
+      FB.api('/me', function(response) {
+          alert(response.name);
+        });
       FB.api(
         '/me/social_table:voucher',
         'post',
         { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
         function(response) {
            if (!response || response.error) {
-              alert('Error occured');
+              alert(response.error.message);
            } else {
               alert('Get Voucher was successful! Action ID: ' + response.id);
            }
@@ -57,7 +62,7 @@
   <p>
     <img title="Stuffed Cookies" 
          src="http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg" 
-         width="550"/>
+         width="300"/>
   </p>
 
   <br>

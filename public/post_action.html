@@ -16,7 +16,7 @@
       FB.api(
         '/me/social_table:voucher',
         'post',
-        { recipe: 'http://socialtable.eztable.com/public/' },
+        { voucher: 'http://socialtable.eztable.com/public/' },
         function(response) {
            if (!response || response.error) {
               alert('Error occured');

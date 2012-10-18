@@ -25,19 +25,6 @@
            }
         });
       
-      
-      
-      FB.api(
-              '/me',
-              'post',
-              { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
-              function(response) {
-                 if (!response || response.error) {
-                    alert(response.error.message);
-                 } else {
-                    alert('Get Voucher was successful! Action ID: ' + response.id);
-                 }
-              });
   }
   </script>
 </head>

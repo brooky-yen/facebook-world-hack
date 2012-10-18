@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+      xmlns:fb="https://www.facebook.com/2008/fbml"> 
+<head prefix="og: http://ogp.me/ns# social_table: 
+                  http://ogp.me/ns/apps/social_table#">
+                  
+                  
+              <title>OG Tutorial App</title>    
+                  
+                  
+                   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# social_table: http://ogp.me/ns/fb/social_table#">
+  <meta property="fb:app_id" content="131536600275003" /> 
+  <meta property="og:type"   content="social_table:voucher" /> 
+  <meta property="og:url"    content="http://socialtable.eztable.com/public/" /> 
+  <meta property="og:title"  content="Sample Voucher" /> 
+  <meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /> 
+  <meta property="og:description" content="The Turducken of Cookies" /> 
+
+  <script type="text/javascript">
+  function postCook()
+  {
+      FB.api(
+        '/me/social_table:voucher',
+        'post',
+        { recipe: 'http://socialtable.eztable.com/public/' },
+        function(response) {
+           if (!response || response.error) {
+              alert('Error occured');
+           } else {
+              alert('Cook was successful! Action ID: ' + response.id);
+           }
+        });
+  }
+  </script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '131536600275003', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  </script>
+
+  <h3>Stuffed Cookies</h3>
+  <p>
+    <img title="Stuffed Cookies" 
+         src="http://fbwerks.com:8000/zhen/cookie.jpg" 
+         width="550"/>
+  </p>
+
+  <br>
+  <form>
+    <input type="button" value="Cook" onclick="postCook()" />
+  </form>
+
+  <fb:activity actions="social_table:cook"></fb:activity>
+
+</body>
+</html>

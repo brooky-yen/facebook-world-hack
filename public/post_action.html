@@ -15,7 +15,7 @@
   {
       FB.api(
         '/me/social_table:voucher',
-        'post',
+        'get',
         { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
         function(response) {
            if (!response || response.error) {

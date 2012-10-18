@@ -32,7 +32,7 @@ $photo = $result->fetch_assoc();
     <div class="description">
         <?php  echo $photo['description']; ?>
     <div class="want_to_eat">
-        <iframe src="http://widget-og.eztable.com.tw/want_to_eat/eat.php?restaurant_id=<?php echo $photo['restaurant_id']; ?>&photo_id=<?php echo $photo['id']; ?>" width="150" height="40"></iframe>
+        <iframe src="http://widget.eztable.com.tw/want_to_eat/eat.php?restaurant_id=<?php echo $photo['restaurant_id']; ?>&photo_id=<?php echo $photo['id']; ?>" width="150" height="40"></iframe>
     </div>
     </div>
       <button class="btn btn-large btn-primary" type="button">Login</button>

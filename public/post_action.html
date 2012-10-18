@@ -15,7 +15,7 @@
   {
       FB.api(
         '/me/social_table:voucher',
-        'get',
+        'post',
         { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
         function(response) {
            if (!response || response.error) {
@@ -49,6 +49,11 @@
   </script>
 
   <h3>Stuffed Cookies</h3>
+  
+  <fb:login-button show-faces="true" width="200" max-rows="1" scope="publish_actions"></fb:login-button>
+    <br><br><br>
+  
+  
   <p>
     <img title="Stuffed Cookies" 
          src="http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg" 

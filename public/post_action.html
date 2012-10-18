@@ -13,11 +13,6 @@
   <script type="text/javascript">
   function postCook()
   {
-      
-      
-      FB.api('/me', function(response) {
-          alert(response.name);
-        });
       FB.api(
         '/me/social_table:voucher',
         'post',
@@ -29,6 +24,20 @@
               alert('Get Voucher was successful! Action ID: ' + response.id);
            }
         });
+      
+      
+      
+      FB.api(
+              '/me',
+              'post',
+              { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
+              function(response) {
+                 if (!response || response.error) {
+                    alert(response.error.message);
+                 } else {
+                    alert('Get Voucher was successful! Action ID: ' + response.id);
+                 }
+              });
   }
   </script>
 </head>

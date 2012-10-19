@@ -113,7 +113,7 @@ echo $result;
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# social_table: http://ogp.me/ns/fb/social_table#">
   <meta property="fb:app_id" content="131536600275003" /> 
   <meta property="og:type"   content="social_table:voucher" /> 
-  <meta property="og:url"    content="http://socialtable.eztable.com/public/post_action.php" /> 
+  <meta property="og:url"    content="http://socialtable.eztable.com/public/index.php" /> 
   <meta property="og:title"  content="Sample Voucher" /> 
   <meta property="og:image"  content="http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg" /> 
   <meta property="og:description" content="The Turducken of Cookies" /> 

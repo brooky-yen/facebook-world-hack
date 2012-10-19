@@ -175,6 +175,11 @@ echo $result;
   <form>
     <input type="button" value="Voucher" onclick="postCook()" />
   </form>
+  
+  <hr />
+  <form method="post" action="control/post_action_ajax.php">
+    <input type="submit" value="post action"  />
+  </form>
 
   <fb:activity actions="social_table:voucher"></fb:activity>
 

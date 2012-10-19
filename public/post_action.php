@@ -11,10 +11,17 @@ $facebook = new \Facebook(array(
 $user_id = $facebook->getUser();
 if($user_id > 0) {
     try {
-        $fbme = $facebook->api('/me');
-        $ret_obj = $facebook->api('/feed', 'POST', array(
-        	'link' => 'http://share.eztable.com.tw/page/share/292846/',
-        	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
+       // $ret_obj = $facebook->api('/feed', 'POST', array(
+    //    	'link' => 'http://share.eztable.com.tw/page/share/292846/',
+    //    	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
+    //    ));
+        
+        
+        
+        $ret_obj = $facebook->api('/me/social_table:get', 'POST', array(
+            'voucher' => 'ttp://socialtable.eztable.com/public/post_action.php',
+        	//'link' => 'http://share.eztable.com.tw/page/share/292846/',
+        	//'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
         ));
   
        // $ret_obj = $facebook->api('/me/local_shareshopping:cook?recipe=http://share.eztable.com.tw/product/coupon/77/', 'POST', array(
@@ -23,7 +30,7 @@ if($user_id > 0) {
     //    ));
         
     } catch (FacebookApiException $e) {
-        ;
+        var_dump($e);
     }
 } 
         

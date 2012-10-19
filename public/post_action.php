@@ -9,7 +9,8 @@ $facebook = new \Facebook(array(
 
 
 $user_id = $facebook->getUser();
-var_dump($user_id);
+$accessToken = $facebook->getAccessToken();
+var_dump($accessToken);
 if($user_id > 0) {
     try {
         $me = $facebook->api('/me');
@@ -45,16 +46,15 @@ if($user_id > 0) {
 
 
 
-/*
 
 $attachment =  array(
-    'access_token' => $token,
-    'message' => $msg,
-    'name' => $title,
-    'link' => $uri,
-    'description' => $desc,
-    'picture'=>$pic,
-    'actions' => json_encode(array('name' => $action_name,'link' => $action_link))
+    'access_token' => $accessToken,
+    'message' => 'test',
+    'name' => 'test title',
+    'link' => 'http://socialtable.eztable.com/public/post_action.php',
+    'description' => 'la l al al al ~',
+    'picture'=> 'http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg',
+    'actions' => json_encode(array('name' => 'get','link' => 'http://socialtable.eztable.com/public/post_action.php'))
 );
 
 $ch = curl_init();
@@ -68,7 +68,6 @@ $result = curl_exec($ch);
 curl_close ($ch);
 
 
-*/
 
 
 
@@ -119,11 +118,11 @@ echo $result;
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# social_table: http://ogp.me/ns/fb/social_table#">
   <meta property="fb:app_id" content="131536600275003" /> 
   <meta property="og:type"   content="social_table:voucher" /> 
-  <meta property="og:url"    content="http://socialtable.eztable.com/public/post_action.html" /> 
+  <meta property="og:url"    content="http://socialtable.eztable.com/public/post_action.php" /> 
   <meta property="og:title"  content="Sample Voucher" /> 
   <meta property="og:image"  content="http://socialtable.eztable.com/public/photo/10.jpg" /> 
   <meta property="og:description" content="The Turducken of Cookies" /> 
-  <meta property="social_table:voucher" content="http://socialtable.eztable.com/public/post_action.html"> 
+  <meta property="social_table:voucher" content="http://socialtable.eztable.com/public/post_action.php"> 
    <title>OG Tutorial App</title>   
 
   <script type="text/javascript">
@@ -132,7 +131,7 @@ echo $result;
       FB.api(
         '/me/social_table:get',
         'post',
-        { voucher: 'http://socialtable.eztable.com/public/post_action.html' },
+        { voucher: 'http://socialtable.eztable.com/public/post_action.php' },
         function(response) {
            if (!response || response.error) {
               alert(response.error.message);

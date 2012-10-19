@@ -13,20 +13,19 @@ if($user_id > 0) {
     try {
         $fbme = $facebook->api('/me');
         $ret_obj = $facebook->api('/feed', 'POST', array(
-        	CC::LINK => 'http://share.eztable.com.tw/page/share/292846/',
+        	'link' => 'http://share.eztable.com.tw/page/share/292846/',
         	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
         ));
   
-        $ret_obj = $facebook->api('/me/local_shareshopping:cook?recipe=http://share.eztable.com.tw/product/coupon/77/', 'POST', array(
-        	CC::LINK => 'http://share.eztable.com.tw/page/share/292846/',
-        	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
-        ));
+       // $ret_obj = $facebook->api('/me/local_shareshopping:cook?recipe=http://share.eztable.com.tw/product/coupon/77/', 'POST', array(
+    //    	'link' => 'http://share.eztable.com.tw/page/share/292846/',
+  //      	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
+    //    ));
         
     } catch (FacebookApiException $e) {
         ;
     }
 } 
-        
         
         /*
         

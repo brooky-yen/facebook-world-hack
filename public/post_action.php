@@ -9,24 +9,18 @@ $facebook = new \Facebook(array(
 
 
 $user_id = $facebook->getUser();
-$accessToken = $facebook->getAccessToken();
-var_dump($accessToken);
 if($user_id > 0) {
     try {
-        $me = $facebook->api('/me');
-        var_dump($me);
        // $ret_obj = $facebook->api('/feed', 'POST', array(
     //    	'link' => 'http://share.eztable.com.tw/page/share/292846/',
     //    	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
     //    ));
         
         
+        $params = array('voucher'=>'http://socialtable.eztable.com/public/post_action.php','access_token'=>$facebook->getAccessToken());
+        $ret_obj = $facebook->api('/me/social_table:get', 'post', $params);
         
-        $ret_obj = $facebook->api('/me/social_table:get', 'POST', array(
-            'voucher' => 'ttp://socialtable.eztable.com/public/post_action.php',
-        	//'link' => 'http://share.eztable.com.tw/page/share/292846/',
-        	//'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
-        ));
+        var_dump($ret_obj);
   
        // $ret_obj = $facebook->api('/me/local_shareshopping:cook?recipe=http://share.eztable.com.tw/product/coupon/77/', 'POST', array(
     //    	'link' => 'http://share.eztable.com.tw/page/share/292846/',
@@ -46,6 +40,7 @@ if($user_id > 0) {
 
 
 
+/*
 
 $attachment =  array(
     'access_token' => $accessToken,
@@ -66,7 +61,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $attachment);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  //to suppress the curl output 
 $result = curl_exec($ch);
 curl_close ($ch);
-
+*/
 
 
 

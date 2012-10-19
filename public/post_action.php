@@ -9,8 +9,11 @@ $facebook = new \Facebook(array(
 
 
 $user_id = $facebook->getUser();
+var_dump($user_id);
 if($user_id > 0) {
     try {
+        $me = $facebook->api('/me');
+        var_dump($me);
        // $ret_obj = $facebook->api('/feed', 'POST', array(
     //    	'link' => 'http://share.eztable.com.tw/page/share/292846/',
     //    	'message' => '我在 EZTABLE Share Shopping 買了超棒的餐券！',
@@ -34,6 +37,49 @@ if($user_id > 0) {
     }
 } 
         
+
+
+
+
+
+
+
+
+/*
+
+$attachment =  array(
+    'access_token' => $token,
+    'message' => $msg,
+    'name' => $title,
+    'link' => $uri,
+    'description' => $desc,
+    'picture'=>$pic,
+    'actions' => json_encode(array('name' => $action_name,'link' => $action_link))
+);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,'https://graph.facebook.com/fbnameorid/feed');
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $attachment);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  //to suppress the curl output 
+$result = curl_exec($ch);
+curl_close ($ch);
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
         /*
         
         $toURL = "https://graph.facebook.com/me/local_shareshopping:cook";

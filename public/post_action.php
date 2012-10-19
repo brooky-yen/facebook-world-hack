@@ -115,7 +115,7 @@ echo $result;
   <meta property="og:type"   content="social_table:voucher" /> 
   <meta property="og:url"    content="http://socialtable.eztable.com/public/post_action.php" /> 
   <meta property="og:title"  content="Sample Voucher" /> 
-  <meta property="og:image"  content="http://socialtable.eztable.com/public/photo/10.jpg" /> 
+  <meta property="og:image"  content="http://www.thewordsworthhotel.co.uk/wp-content/uploads/gift-voucher.jpg" /> 
   <meta property="og:description" content="The Turducken of Cookies" /> 
   <meta property="social_table:voucher" content="http://socialtable.eztable.com/public/post_action.php"> 
    <title>OG Tutorial App</title>   

@@ -1,20 +1,17 @@
 <?php
-use EZTABLE\Kernel\Helper\SmartyHelper;
-use EZTABLE\Kernel\DAO\CC;
-use EZTABLE\Kernel\Auth\FBHelper;
 
+require_once '../kernel/lib/facebook/facebook.php';
         
-        // kaikao facebook test
-        // get user facebook object
-        $fbInstance = FBHelper::getInstance();
-        $facebook = $fbInstance->getFacebook();
+
+$facebook = new \Facebook(array(
+    'appId'  => 131536600275003,
+    'secret' => '750fbfdd13c87817c5fa9c3d0843217c',
+));
         $user_id = $facebook->getUser();
-        // if not login
-        /*
+        var_dump($user_id);
         $url = $facebook->getLoginUrl(array('scope'=>'email,publish_actions'));
         echo "<script> top.location=\"".$url."\"; </script>";
         exit(0);
-        */
         if($user_id > 0) {
             try {
 //                $fbme = $facebook->api('/me');
@@ -67,13 +64,3 @@ echo $result;
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-SmartyHelper::assignAndDisplay( array(), 'post_action.tpl.html');

@@ -45,7 +45,7 @@ if($user_id > 0) {
   function postCook()
   {
       FB.api(
-        '/me/social_table:get',
+        '/me/social_table:want to eat',
         'post',
         { voucher: 'http://socialtable.eztable.com/public/post_action.php' },
         function(response) {
@@ -94,7 +94,7 @@ if($user_id > 0) {
 
   <br>
   <form>
-    <input type="button" value="Voucher" onclick="postCook()" />
+    <input type="button" value="want to eat" onclick="postCook()" />
   </form>
   
   <hr />
